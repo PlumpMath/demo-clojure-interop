@@ -15,7 +15,7 @@ public class Main {
         require.invoke(Clojure.read("clojure-lib.core"));
 
         final IFn generate = Clojure.var("clojure-lib.core", "generate-sequence");
-        final LazySeq result = (LazySeq) generate.invoke(10000);
+        final LazySeq result = (LazySeq) generate.invoke(100);
         final Iterator iterator = result.iterator();
         IntStream.range(0, 5).forEach(
                 nbr -> System.out.println(iterator.next())
